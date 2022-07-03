@@ -1,9 +1,9 @@
-package id.haaweejee.msi.app.core.data.remote.model.movie
+package id.haaweejee.msi.app.core.data.remote.model.series
 
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class MovieResponse(
+data class SeriesResponse(
     val page : Int? = 0,
     val results : List<Results>? = null,
     val total_results : Int? = 0,
