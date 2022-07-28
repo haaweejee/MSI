@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import id.haaweejee.msi.app.core.domain.model.ListItem
 import id.haaweejee.msi.app.databinding.ItemLinearListBinding
-import id.haaweejee.msi.app.core.data.remote.model.movie.Results as MovieList
 
-class LinearListAdapter : ListAdapter<MovieList, LinearListAdapter.LinearViewHolder>(DIFF_CALLBACK) {
+class LinearListAdapter : ListAdapter<ListItem, LinearListAdapter.LinearViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,11 +27,11 @@ class LinearListAdapter : ListAdapter<MovieList, LinearListAdapter.LinearViewHol
     }
 
     class LinearViewHolder(private val binding: ItemLinearListBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(data : MovieList){
+        fun bind(data : ListItem){
             binding.apply {
-                tvTitle.text = data.original_title
+                tvTitle.text = data.title
                 Glide.with(itemView.context)
-                    .load("https://image.tmdb.org/t/p/w500" + data.poster_path)
+                    .load("https://image.tmdb.org/t/p/w500" + data.poster)
                     .into(ivPoster)
             }
         }
@@ -39,10 +39,10 @@ class LinearListAdapter : ListAdapter<MovieList, LinearListAdapter.LinearViewHol
     }
 
     companion object{
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieList>(){
-            override fun areItemsTheSame(oldItem: MovieList, newItem: MovieList): Boolean = oldItem == newItem
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListItem>(){
+            override fun areItemsTheSame(oldItem: ListItem, newItem: ListItem): Boolean = oldItem == newItem
 
-            override fun areContentsTheSame(oldItem: MovieList, newItem: MovieList): Boolean = oldItem.id == newItem.id
+            override fun areContentsTheSame(oldItem: ListItem, newItem: ListItem): Boolean = oldItem.id == newItem.id
         }
     }
 }
