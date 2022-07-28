@@ -1,4 +1,4 @@
-package id.haaweejee.msi.app.core.data.remote.model.series
+package id.haaweejee.msi.app.core.data.remote.response.series
 
 import com.squareup.moshi.JsonClass
 

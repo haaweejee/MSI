@@ -1,4 +1,4 @@
-package id.haaweejee.msi.app.core.data.remote.model.movie
+package id.haaweejee.msi.app.core.data.remote.response.movie
 
 import com.squareup.moshi.JsonClass
 
