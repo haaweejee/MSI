@@ -8,11 +8,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 import id.haaweejee.msi.app.databinding.ActivityMainBinding
 import id.haaweejee.msi.app.ui.adapter.FragmentAdapter
 import id.haaweejee.msi.app.ui.viewmodel.MovieViewModel
 import id.haaweejee.msi.app.ui.adapter.LinearListAdapter
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var _binding : ActivityMainBinding
